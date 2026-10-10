@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#14213a" />
+    <meta
+      name="description"
+      content="每天写下一个愿望，让它成为只属于你的星星。"
+    />
+    <link rel="icon" href="/wishstar/favicon.svg" type="image/svg+xml" />
+    <title>Wishstar · 愿望星</title>
+  </head>
+  <body>
+    <svg class="symbol-sprite" aria-hidden="true">
+      <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 2.3 2.7 6.5 6.8 3.2-6.8 3.2-2.7 6.5-2.7-6.5L2.5 12l6.8-3.2L12 2.3Z" /></symbol>
+      <symbol id="icon-orbit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6" /><ellipse cx="12" cy="12" rx="10" ry="5.2" transform="rotate(-27 12 12)" /></symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M7 3v4m10-4v4M3 10h18m-13 4h3m-3 3h6" /></symbol>
+      <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16" /><circle cx="9" cy="7" r="2" /><circle cx="16" cy="17" r="2" /></symbol>
+      <symbol id="icon-back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" /></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19" /></symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 17v3h16v-3" /></symbol>
+      <symbol id="icon-upload" viewBox="0 0 24 24"><path d="M12 17V5m-4 4 4-4 4 4M4 17v3h16v-3" /></symbol>
+      <symbol id="icon-feather" viewBox="0 0 24 24"><path d="M20 4C12 3 5 9 5 17l-2 3m2-3c8 0 14-7 15-13M7 14h5" /></symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.5 15.5A9 9 0 0 1 8.5 3.5a9 9 0 1 0 12 12Z" /></symbol>
+      <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M4 7h16m-10 4v6m4-6v6M8 7l1-3h6l1 3m2 0-1 14H7L6 7" /></symbol>
+    </svg>
+
+    <div class="app-shell" id="app" data-ready="false">
+      <header class="topbar">
+        <button class="brand" type="button" data-page-link="today" aria-label="返回今日许愿">
+          <span class="brand-star">✦</span>
+          <span>wishstar</span>
+        </button>
+        <div class="topbar-actions">
+          <span class="privacy-badge">仅存本机</span>
+          <button class="icon-button" id="settingsButton" type="button" aria-label="打开设置与备份">
+            <svg class="icon"><use href="#icon-settings" /></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="viewport" id="viewport">
+        <section class="page page-today" id="page-today" aria-labelledby="todayTitle">
+          <p class="chapter">CHAPTER 01 · A LITTLE WISH</p>
+          <h1 class="hero-title" id="todayTitle">今天，<br />想许什么愿？</h1>
+          <p class="hero-copy">把心里小小的期待，轻轻告诉宇宙。</p>
+
+          <div class="storybook-scene" role="img" aria-label="小狐狸坐在山坡上仰望星空与月亮">
+            <svg viewBox="0 0 440 252" aria-hidden="true">
+              <defs>
+                <linearGradient id="scene-sky" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#132744" /><stop offset=".62" stop-color="#4d5573" /><stop offset="1" stop-color="#c18e7b" /></linearGradient>
+                <linearGradient id="scene-hill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#527064" /><stop offset="1" stop-color="#203d3e" /></linearGradient>
+                <radialGradient id="moon-halo"><stop stop-color="#fff4c8" stop-opacity=".48" /><stop offset="1" stop-color="#fff4c8" stop-opacity="0" /></radialGradient>
+              </defs>
+              <rect width="440" height="252" fill="url(#scene-sky)" />
+              <circle cx="346" cy="55" r="62" fill="url(#moon-halo)" />
+              <circle cx="346" cy="55" r="18" fill="#ffedb7" />
+              <g class="scene-dots" fill="#fff0c7"><circle cx="46" cy="38" r="1.2" /><circle cx="91" cy="74" r="1.4" /><circle cx="129" cy="27" r="1" /><circle cx="182" cy="55" r="1.2" /><circle cx="228" cy="24" r="1.4" /><circle cx="281" cy="79" r="1" /><circle cx="400" cy="88" r="1.3" /><circle cx="386" cy="29" r="1" /><path d="m85 23 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z" /><path d="m250 38 1.6 5 5 1.6-5 1.6-1.6 5-1.6-5-5-1.6 5-1.6Z" /></g>
+              <path d="M0 167c65-42 118-14 167-16 53-2 91-30 141-20 49 10 85 20 132 0v121H0Z" fill="#30485a" />
+              <path d="M0 205c83-31 139-8 194-25 55-17 111-9 155 4 34 10 62 0 91-9v77H0Z" fill="url(#scene-hill)" />
+              <g transform="translate(347 137)"><path d="m0 18 31-24 34 25-5 5L31 3 4 24Z" fill="#785348" /><path d="M8 19h49v48H8Z" fill="#936f57" /><rect x="17" y="29" width="15" height="18" rx="2" fill="#ffe5a8" /><path d="M24.5 29v18M17 38h15" stroke="#aa7954" /><rect x="39" y="37" width="12" height="30" rx="3" fill="#46393a" /></g>
+              <g transform="translate(99 177)"><path d="M31 38c11-17 31-21 44-12-8 14-22 25-45 22" fill="#c87956" stroke="#704c45" stroke-width="1.7" /><path d="M52 29c9 3 12 8 13 14-10 7-19 7-31 5" fill="#f5dfb5" /><path d="M11 48Q1 29 13 15 26 1 37 20q9 13 4 29" fill="#ca8862" stroke="#604842" stroke-width="2" /><path d="M14 19 10 1l14 9L36 0l1 23" fill="#cb8e67" stroke="#654a43" stroke-width="2" /><circle cx="35" cy="21" r="1.8" fill="#3d3333" /><path d="M15 38q12-4 20 8" fill="#f1d5aa" /></g>
+              <g fill="#f9d58d"><circle cx="44" cy="186" r="2" /><circle cx="68" cy="168" r="1.4" /><circle cx="296" cy="198" r="1.7" /><circle cx="319" cy="167" r="1.2" /></g>
+            </svg>
+            <span class="arrival-star" id="arrivalStar" aria-hidden="true">✦</span>
+          </div>
+
+          <div class="scene-meta">
+            <span><i></i>你的小宇宙，已亮起 <strong id="homeCount">0</strong> 颗星</span>
+            <time id="todayDate"></time>
+          </div>
+
+          <div id="editorZone">
+            <div class="wish-paper">
+              <div class="paper-heading">
+                <span><svg class="icon"><use href="#icon-feather" /></svg>写下今天的小小愿望</span>
+                <small>一日一愿</small>
+              </div>
+              <textarea
+                class="wish-input"
+                id="wishInput"
+                maxlength="300"
+                placeholder="比如：希望未来的我，能在一个晴朗的日子里，看见大海……"
+                aria-label="输入今天的愿望"
+              ></textarea>
+              <div class="paper-footer">
+                <span id="draftStatus">✦ 愿望不必很大</span>
+                <span id="wishCount" aria-live="polite">0 / 300</span>
+              </div>
+            </div>
+            <button class="primary-button" id="saveWishButton" type="button">
+              <svg class="icon"><use href="#icon-star" /></svg>
+              <span id="saveWishLabel">把愿望种进宇宙</span>
+            </button>
+          </div>
+
+          <article class="saved-wish" id="savedWish" hidden>
+            <p class="saved-label">✦ 今日的星星已经亮起</p>
+            <p class="saved-text" id="savedWishText"></p>
+            <div class="saved-actions">
+              <button class="text-button" id="editWishButton" type="button">修改今日愿望</button>
+              <button class="text-button" id="findWishButton" type="button">去星空看看 ✧</button>
+            </div>
+          </article>
+          <p class="quiet-note">不用追赶时间。愿望可以慢慢生长。<br />内容只保存在当前浏览器，请记得定期导出备份。</p>
+        </section>
+
+        <section class="page" id="page-stars" aria-labelledby="starsTitle" hidden>
+          <header class="section-heading">
+            <p>CHAPTER 02 · MY CONSTELLATION</p>
+            <h2 id="starsTitle">我的愿望银河</h2>
+            <span>每一颗星，都藏着你曾经的期待。</span>
+          </header>
+          <div class="filters" id="starFilters" aria-label="筛选愿望">
+            <button class="filter active" type="button" data-filter="all">全部星星</button>
+            <button class="filter" type="button" data-filter="pending">仍在发光</button>
+            <button class="filter" type="button" data-filter="fulfilled">已经实现</button>
+          </div>
+          <div class="galaxy" id="galaxy" aria-label="可点击的愿望星空">
+            <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+            <div id="starPoints"></div>
+            <p class="galaxy-hint">✧ 点一颗星，听听那时的心声 ✧</p>
+          </div>
+          <div class="galaxy-summary">
+            <span>已收藏 <strong id="starCount">0</strong> 颗</span>
+            <span>已实现 <strong id="fulfilledCount">0</strong> 个</span>
+          </div>
+          <p class="map-note" id="mapNote"></p>
+        </section>
+
+        <section class="page" id="page-memories" aria-labelledby="memoriesTitle" hidden>
+          <header class="section-heading">
+            <p>CHAPTER 03 · LETTERS IN TIME</p>
+            <h2 id="memoriesTitle">时光回望</h2>
+            <span>去看看过去的你，曾经在期待什么。</span>
+          </header>
+          <article class="anniversary-card">
+            <span class="memory-moon"></span>
+            <p>✦ 一年前的今天</p>
+            <time id="anniversaryDate"></time>
+            <blockquote id="anniversaryText"></blockquote>
+            <small>有些愿望已经实现，有些还在路上。都没关系。</small>
+          </article>
+          <h3 class="minor-heading">翻开旧日的星光</h3>
+          <div class="filters" id="yearFilters" aria-label="按年份筛选"></div>
+          <div class="timeline" id="timeline"></div>
+          <button class="secondary-button" id="randomWishButton" type="button">
+            <svg class="icon"><use href="#icon-star" /></svg>随机遇见过去的一颗星
+          </button>
+        </section>
+
+        <section class="page" id="page-settings" aria-labelledby="settingsTitle" hidden>
+          <header class="section-heading">
+            <p>A LITTLE PLACE FOR YOUR WISHES</p>
+            <h2 id="settingsTitle">设置与备份</h2>
+            <span>把属于自己的星空，稳稳地收好。</span>
+          </header>
+          <article class="settings-card">
+            <h3><svg class="icon"><use href="#icon-download" /></svg>我的星空备份</h3>
+            <p>愿望保存在这台设备的浏览器中，不会上传到服务器。换手机或清理浏览器前，请先导出 JSON 备份。</p>
+            <button class="settings-action" id="exportButton" type="button">
+              <svg class="icon"><use href="#icon-download" /></svg>
+              <span><strong>导出整片星空</strong><small>下载一份 JSON 备份文件</small></span><b>›</b>
+            </button>
+            <button class="settings-action" id="importButton" type="button">
+              <svg class="icon"><use href="#icon-upload" /></svg>
+              <span><strong>从备份找回星空</strong><small>可合并，也可覆盖本机数据</small></span><b>›</b>
+            </button>
+            <input id="importFile" type="file" accept=".json,application/json" hidden />
+          </article>
+          <article class="settings-card">
+            <h3><svg class="icon"><use href="#icon-moon" /></svg>夜空与体验</h3>
+            <p>夜晚要安静一点。你可以让星星静静发光。</p>
+            <label class="setting-row"><span>温柔星光闪烁<small>关闭后星星不再呼吸闪烁</small></span><input id="twinkleSwitch" type="checkbox" role="switch" checked /></label>
+            <label class="setting-row"><span>减少动态效果<small>星星升空动画也会跳过</small></span><input id="motionSwitch" type="checkbox" role="switch" /></label>
+          </article>
+          <article class="settings-card danger-card">
+            <h3><svg class="icon"><use href="#icon-trash" /></svg>本机数据</h3>
+            <p>清空后无法撤销。建议先导出备份，再移除这台设备上的全部愿望。</p>
+            <button class="danger-button" id="clearButton" type="button">清空本机星空</button>
+          </article>
+          <p class="privacy-note">✧ 本站没有账号、服务器接口、第三方统计或外链字体。浏览器扩展、输入法和操作系统的行为不在网页控制范围内。</p>
+        </section>
+      </main>
+
+      <nav class="tabbar" aria-label="页面导航">
+        <button type="button" data-page-link="today" aria-selected="true"><svg class="icon"><use href="#icon-star" /></svg><span>今日许愿</span></button>
+        <button type="button" data-page-link="stars" aria-selected="false"><svg class="icon"><use href="#icon-orbit" /></svg><span>我的星空</span></button>
+        <button type="button" data-page-link="memories" aria-selected="false"><svg class="icon"><use href="#icon-calendar" /></svg><span>时光回望</span></button>
+      </nav>
+
+      <div class="sheet-mask" id="detailMask" hidden>
+        <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="detailTitle" tabindex="-1" id="detailSheet">
+          <span class="sheet-grip"></span>
+          <div class="sheet-top"><time id="detailDate"></time><button class="icon-button paper-icon" id="closeDetailButton" type="button" aria-label="关闭愿望详情"><svg class="icon"><use href="#icon-close" /></svg></button></div>
+          <h2 id="detailTitle"></h2>
+          <p class="detail-text" id="detailText"></p>
+          <p class="detail-status" id="detailStatus"></p>
+          <button class="sheet-primary" id="fulfillButton" type="button"></button>
+          <button class="sheet-delete" id="deleteWishButton" type="button">删除这颗星</button>
+        </section>
+      </div>
+
+      <dialog class="import-dialog" id="importDialog">
+        <form method="dialog">
+          <span class="dialog-star">✦</span>
+          <h2>如何放回这些星星？</h2>
+          <p id="importSummary"></p>
+          <button class="dialog-primary" value="merge">合并星空（推荐）</button>
+          <button class="dialog-secondary" value="replace">用备份全部覆盖</button>
+          <button class="dialog-cancel" value="cancel">先不导入</button>
+        </form>
+      </dialog>
+
+      <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+      <div class="loading" id="loading" role="status"><span>✦</span><p>正在打开你的星空…</p></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
